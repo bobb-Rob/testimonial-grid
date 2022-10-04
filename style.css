@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+  --barlow-font: 'Barlow Semi Condensed', sans-serif;
+  --para-text-size: 13px;
+  --moderate-violet: hsl(263, 55%, 52%);
+  --light-moderate-violet: #A775F1;
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  padding: 1rem;
+}
+
+.container {
+  background-color: var(--light-gray);
+  width: 100%;  
+  display: grid;
+  /* column-gap: 1rem;
+  row-gap: 1rem; */
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  font-family: var(--barlow-font);
+  font-size: var(--para-text-size);  
+  border-radius: 1rem;
+  box-shadow: 2px 3px 13px -3px #4C4C4C;
+}
+
+.daniel-card {
+  background-color: var(--moderate-violet);
+  color: var(--white);
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: 90% 0%;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+
+}
+
+.daniel-card .card__image {
+  border: 2px solid var(--light-moderate-violet);
+}
+
+.card__image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  overflow: hidden;
+ 
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.daniel-card .card__content p {
+  color: var(--light-moderate-violet);
+}
+
+.card > div + p {
+  font-size: 1.5rem;
+}
+
+.card > div ~ p {
+  margin-top: 1rem;
+}
+
+.daniel-card > p:last-child {
+  color: var(--light-moderate-violet);
+}
+
+.jonathan-card {
+  background-color: var(--very-dark-grayish-blue);
+  color: var(--white);
+}
+
+.jonathan-card .card__content p,
+.jonathan-card > p:last-child,
+.jeanette-card .card__content p,
+.jeanette-card > p:last-child,
+.kira-card .card__content p,
+.kira-card > p:last-child,
+.patrick-card .card__content p,
+.patrick-card > p:last-child{
+  color: var(--light-gray);
+}
+
+.jeanette-card,
+.kira-card {
+  background-color: var(--white);
+  color: var(--very-dark-blackish-blue);
+} 
+
+.patrick-card {
+  background-color: var(--very-dark-blackish-blue);
+  color: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .daniel-card {
+    grid-column: 1 / 3;
+  }
+
+  .kira-card {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+  }
+
+  .patrick-card {
+    grid-column: 2 / span 2;
+    /* grid-row: 2 / span 2; */
+  }
+}
+  
